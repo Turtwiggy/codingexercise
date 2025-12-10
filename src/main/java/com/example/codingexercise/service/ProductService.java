@@ -1,6 +1,7 @@
 package com.example.codingexercise.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class ProductService {
     return gateway.getProducts();
   }
 
-  public Product getProduct(String id) {
+  public Optional<Product> getProduct(String id) {
     return gateway.getProduct(id);
   }
 

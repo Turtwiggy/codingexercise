@@ -6,13 +6,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.codingexercise.exceptions.ConvertingToSameExchangeRateException;
 import com.example.codingexercise.gateway.dto.ExchangeRates;
-
-class ConvertingToSameExchangeRateException extends RuntimeException {
-  public ConvertingToSameExchangeRateException(String currency) {
-    super("An issue occured getting the exchange rate: " + currency);
-  }
-}
 
 @Component
 public class ConversionRateGateway {

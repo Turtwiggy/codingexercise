@@ -67,7 +67,6 @@ public class PackageController {
     @PutMapping("/packages/{id}")
     public ProductPackage update(
             @PathVariable String id,
-            @RequestParam(required = false, defaultValue = "USD") String currency,
             @RequestBody ProductPackage newProductPackage) {
         UUID uuid = UUID.fromString(id);
         return packageRepository.findById(uuid)
@@ -75,7 +74,6 @@ public class PackageController {
                     p.setName(newProductPackage.getName());
                     p.setDescription(newProductPackage.getDescription());
                     p.setProductIds(newProductPackage.getProductIds());
-                    p.setPrice(priceAdjustorService.getAdjustedPrice(p, currency));
                     return packageRepository.save(p);
                 })
                 .orElseGet(() -> {

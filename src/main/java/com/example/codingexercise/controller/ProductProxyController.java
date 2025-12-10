@@ -1,6 +1,7 @@
 package com.example.codingexercise.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,10 @@ public class ProductProxyController {
 
   @GetMapping("/products/{id}")
   public Product get(@PathVariable String id) {
-    return gateway.getProduct(id);
+    Optional<Product> p = gateway.getProduct(id);
+    if (p.isEmpty())
+      return null;
+    return p.get();
   }
 
 }

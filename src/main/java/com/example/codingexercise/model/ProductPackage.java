@@ -68,10 +68,9 @@ public class ProductPackage {
         this.productIds = productIds;
     }
 
-    // Use the PriceAdjustor Service to calculate price
-    // public BigDecimal getPrice(PackageService packageService) {
-    // return packageService.calculatePrice(this);
-    // }
+    public BigDecimal getPrice() {
+        return this.price;
+    }
 
     public void setPrice(BigDecimal price) {
         this.price = price;
