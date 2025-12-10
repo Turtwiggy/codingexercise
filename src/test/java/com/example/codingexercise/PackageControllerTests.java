@@ -135,6 +135,9 @@ class PackageControllerTests {
         Mockito.when(productServiceGateway.getProduct(productId)).thenReturn(Optional.of(mockProduct));
 
         // stub the conversion rate gateway call
+        // Note: this stub isnt used, because we shortcut calling the api
+        // if the conversion rate is USD. But will leave it in, as if you do
+        // call the external api with "USD", "USD", an exception is thrown.
         ConvertingToSameExchangeRateException ex = new ConvertingToSameExchangeRateException("USD");
         Mockito.when(conversionRateGateway.getConversionRates("USD", "USD")).thenThrow(ex);
 
