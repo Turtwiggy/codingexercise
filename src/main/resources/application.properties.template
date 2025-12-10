@@ -1,0 +1,5 @@
+
+product.service.url=somereal_url
+product.service.exchangerate_url=https://api.frankfurter.dev/v1/latest
+external.api.username=somereal_username
+external.api.password=somereal_password

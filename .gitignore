@@ -1,0 +1,7 @@
+
+# Ignore some files
+Coding_Exercise.pdf
+target
+
+# Ignore sensitive files
+**/application.properties
